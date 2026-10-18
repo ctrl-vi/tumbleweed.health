@@ -1,0 +1,499 @@
+.shell {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.header {
+  padding: 20px var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 1.625rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.6px;
+}
+.brand span {
+  min-width: 0;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.button:hover {
+  background: var(--surface);
+}
+.primary {
+  background: var(--action);
+  color: var(--white);
+  border-color: var(--action);
+}
+.primary:hover {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+}
+.selected {
+  background: var(--surface);
+  border-color: var(--outline);
+}
+.section {
+  padding: 64px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+}
+.section h2 {
+  font-size: 2.5rem;
+}
+.hero {
+  padding: 64px var(--gutter) 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 4rem;
+  max-width: 920px;
+}
+.intro {
+  max-width: 720px;
+  font-size: 1.375rem;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero .actions .button:first-child {
+  min-width: 224px;
+}
+.hero .actions .button:last-child {
+  min-width: 204px;
+}
+.hint {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.conversation {
+  width: 100%;
+  max-width: 760px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: start;
+}
+.conversationHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.conversationHeader strong {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.message {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: var(--radius);
+}
+.message small {
+  font-weight: 600;
+  color: var(--muted);
+}
+.user {
+  background: var(--surface);
+}
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  width: 100%;
+}
+.service {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.service h3 {
+  font-size: 1.5rem;
+}
+.service p {
+  color: var(--muted);
+}
+.service .button {
+  margin-top: auto;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.step span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.step h3 {
+  font-size: 1.5rem;
+}
+.step p {
+  color: var(--muted);
+}
+.partnerBand {
+  background: var(--surface);
+  gap: 24px;
+}
+.partnerBand p {
+  max-width: 720px;
+  color: var(--muted);
+}
+.footer {
+  padding: 64px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer::before {
+  content: "";
+  height: 1px;
+  background: var(--line);
+  width: 100%;
+}
+.footer h2 {
+  font-size: 2rem;
+}
+.footerLinks {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footerLinks .button {
+  min-width: 180px;
+}
+.page {
+  padding: 64px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+.page h1 {
+  font-size: 3rem;
+}
+.lede {
+  color: var(--muted);
+  max-width: 760px;
+}
+.topics {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.topics .button {
+  min-width: 220px;
+}
+.narrow {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.notice {
+  padding: 24px;
+  background: var(--surface);
+  width: 100%;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.notice h2 {
+  font-size: 1.5rem;
+}
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 760px;
+}
+.faq article {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq h2 {
+  font-size: 1.5rem;
+}
+.faq p {
+  color: var(--muted);
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.error {
+  color: var(--error);
+  font-size: 1rem;
+}
+.review {
+  margin: 0;
+  display: grid;
+  gap: 20px;
+}
+.review dt {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.review dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+}
+.full {
+  width: 100%;
+}
+.phone {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.transcript {
+  max-height: 480px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.composer {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.composer textarea {
+  min-height: 100px;
+}
+.chatStatus {
+  font-size: 0.875rem;
+  color: var(--muted);
+  min-height: 21px;
+}
+.resources {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 850px) {
+  .header {
+    gap: 12px;
+  }
+  .header .button {
+    padding-inline: 16px;
+  }
+  .hero h1 {
+    font-size: 3.25rem;
+  }
+  .columns {
+    gap: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .header {
+    display: grid;
+    padding: 16px var(--gutter);
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+  .brand {
+    font-size: 1.4375rem;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .header .language {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: 104px;
+    padding-inline: 10px;
+  }
+  .header .example {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .header .partners {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .header .button {
+    padding-inline: 12px;
+  }
+  .hero {
+    padding: 40px var(--gutter) 48px;
+    gap: 24px;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .intro {
+    font-size: 1.125rem;
+  }
+  .hero .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero .actions .button {
+    width: 100%;
+    min-width: 0;
+  }
+  .section {
+    padding: 24px var(--gutter);
+    gap: 36px;
+  }
+  .section h2 {
+    font-size: 1.875rem;
+  }
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .service .button {
+    margin-top: 4px;
+  }
+  .conversation {
+    padding: 20px;
+  }
+  .message {
+    padding: 20px;
+  }
+  .footer {
+    padding: 24px var(--gutter);
+  }
+  .footer h2 {
+    font-size: 1.625rem;
+  }
+  .footerLinks {
+    flex-direction: column;
+  }
+  .page {
+    padding: 40px var(--gutter);
+    gap: 24px;
+  }
+  .page h1 {
+    font-size: 2.125rem;
+  }
+  .topics {
+    width: 100%;
+    gap: 8px;
+  }
+  .topics .button {
+    min-width: 0;
+    flex: 1 1 140px;
+    padding: 12px;
+  }
+  .phone {
+    font-size: 1.75rem;
+  }
+  .actions {
+    width: 100%;
+  }
+  .page .actions .button {
+    flex: 1 1 auto;
+  }
+  .notice {
+    padding: 20px;
+  }
+}
+.header .button {
+  padding-inline: 16px;
+  overflow-wrap: anywhere;
+}
+.header > * {
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  .header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .header .language {
+    width: auto;
+    max-width: 100%;
+    padding-inline: 12px;
+  }
+  .brand {
+    overflow-wrap: anywhere;
+  }
+  .hero h1,
+  .page h1 {
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 380px) {
+  .header .brand {
+    grid-column: 1 / -1;
+  }
+  .header .language {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .header .example,
+  .header .partners {
+    grid-row: 3;
+  }
+}
