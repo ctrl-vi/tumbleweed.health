@@ -1,0 +1,179 @@
+@import "@fontsource-variable/manrope/index.css";
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+:root {
+  --page: #fcfaf5;
+  --ink: #332d26;
+  --muted: #625b50;
+  --action: #8d492e;
+  --action-hover: #753b25;
+  --surface: #f4efe6;
+  --line: #d8cfc1;
+  --outline: #82776a;
+  --white: #fff;
+  --error: #8e3027;
+  --focus: #584532;
+  --radius: 4px;
+  --gutter: 64px;
+  --font: "Manrope Variable", Manrope, Arial, sans-serif;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: auto;
+}
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+a,
+button,
+input,
+textarea,
+summary {
+  outline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--focus);
+}
+button,
+input,
+textarea {
+  border-radius: var(--radius);
+}
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--outline);
+  background: var(--white);
+  padding: 14px 16px;
+  color: var(--ink);
+  font-size: 1rem;
+  min-height: 52px;
+}
+textarea {
+  resize: vertical;
+  min-height: 128px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+}
+small {
+  font-size: 0.875rem;
+}
+::selection {
+  background: var(--line);
+  color: var(--ink);
+}
+.skip {
+  position: absolute;
+  inset-inline-start: 24px;
+  top: -100px;
+  background: var(--white);
+  padding: 12px;
+  z-index: 10;
+}
+.skip:focus {
+  top: 12px;
+}
+main {
+  min-height: 45vh;
+}
+ul {
+  padding-inline-start: 24px;
+}
+p,
+li,
+dd {
+  overflow-wrap: anywhere;
+}
+button:disabled {
+  opacity: 0.65;
+}
+@media (max-width: 640px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+:root {
+  --gutter: clamp(24px, 4vw, 64px);
+}
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3 { max-width: 100%; overflow-wrap: anywhere; }
