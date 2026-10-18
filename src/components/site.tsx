@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { PillNavigation } from "./motion";
 import { examples, type Topic } from "@/content/examples";
 import { service } from "@/lib/config";
 import s from "./site.module.css";
@@ -28,7 +29,7 @@ export function Action({
 }
 export function TextAction() {
   return (
-    <Action primary href={service.smsHref}>
+    <Action primary className={s.shiny} href={service.smsHref}>
       Text Tumbleweed
     </Action>
   );
@@ -46,15 +47,7 @@ export function Header() {
         />
         <span>tumbleweed</span>
       </a>
-      <Action className={s.example} href="/examples/food">
-        See an example
-      </Action>
-      <Action className={s.partners} href="/partners">
-        For partners
-      </Action>
-      <Action className={s.language} href="/language">
-        Language
-      </Action>
+      <PillNavigation />
     </header>
   );
 }
@@ -98,22 +91,55 @@ export function Conversation({ topic = "food" }: { topic?: Topic }) {
   const e = examples[topic];
   return (
     <section
-      className={s.conversation}
+      className={s.productPreview}
       aria-label={`${e.label}: sample text conversation`}
     >
-      <div className={s.conversationHeader}>
-        <strong>Tumbleweed</strong>
-        <p className={s.hint}>Sample text conversation</p>
+      <div className={s.device}>
+        <div className={s.deviceScreen}>
+          <div className={s.statusBar} aria-hidden="true">
+            <span>9:41</span>
+            <span className={s.island} />
+            <span className={s.statusIcons}>
+              ▮▮▮ <span className={s.battery} />
+            </span>
+          </div>
+          <div className={s.contactHeader}>
+            <span className={s.backChevron} aria-hidden="true">
+              ‹
+            </span>
+            <img src="/brand/tumbleweed.png" width={36} height={36} alt="" />
+            <strong>
+              Tumbleweed <span aria-hidden="true">›</span>
+            </strong>
+          </div>
+          <div className={s.phoneTranscript}>
+            <p className={s.transcriptDate}>
+              Text message · SMS
+              <br />
+              <span>Today 9:41 AM</span>
+            </p>
+            <div className={`${s.bubble} ${s.sentBubble}`}>
+              <span className="sr-only">You: </span>
+              <p>{e.question}</p>
+            </div>
+            <div className={`${s.bubble} ${s.receivedBubble}`}>
+              <span className="sr-only">Tumbleweed: </span>
+              <p>{e.reply}</p>
+            </div>
+          </div>
+          <div className={s.mockComposer} aria-hidden="true">
+            <span>＋</span>
+            <div>
+              Text message <span>↑</span>
+            </div>
+          </div>
+          <div className={s.homeIndicator} aria-hidden="true" />
+        </div>
       </div>
-      <div className={`${s.message} ${s.user}`}>
-        <small>You</small>
-        <p>{e.question}</p>
-      </div>
-      <div className={s.message}>
-        <small>Tumbleweed</small>
-        <p>{e.reply}</p>
-      </div>
-      <p className={s.hint}>Example only. No message is sent.</p>
+      <p className={s.previewCaption}>
+        Sample conversation <span aria-hidden="true">·</span> No message is
+        sent.
+      </p>
     </section>
   );
 }

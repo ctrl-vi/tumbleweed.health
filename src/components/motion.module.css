@@ -1,0 +1,223 @@
+.morphGroup {
+  display: inline-flex;
+  position: relative;
+  align-items: baseline;
+}
+.morph {
+  display: inline-grid;
+  width: 1.8em;
+  text-align: left;
+}
+.morph > span {
+  grid-area: 1 / 1;
+}
+.morphText {
+  animation: morphText 8s ease-in-out infinite;
+}
+.morphCall {
+  opacity: 0;
+  animation: morphCall 8s ease-in-out infinite;
+}
+.morph[data-paused="true"] > span {
+  animation-play-state: paused;
+}
+@keyframes morphText {
+  0%,
+  32%,
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  44%,
+  82% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  94% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes morphCall {
+  0%,
+  32%,
+  100% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  44%,
+  82% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  94% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+.filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.flip {
+  display: grid;
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  border: 0;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  perspective: 800px;
+}
+.flipSizer,
+.flipLine {
+  grid-area: 1 / 1;
+}
+.flipSizer {
+  visibility: hidden;
+}
+.flipLine {
+  width: 100%;
+  align-self: center;
+}
+.flipWord {
+  display: inline-block;
+  white-space: nowrap;
+}
+.flipChar {
+  display: inline-block;
+  transform-origin: center center -0.5em;
+  backface-visibility: hidden;
+}
+.navigation {
+  position: relative;
+  max-width: 100%;
+}
+.pillBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: var(--surface);
+}
+.pillItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 28px;
+}
+.pillIndicator {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--page);
+  box-shadow: 0 1px 4px #332d2612;
+  pointer-events: none;
+}
+.pillLink {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 28px;
+}
+@media (max-width: 640px) {
+  .navigation {
+    width: 100%;
+  }
+  .pillBar {
+    justify-content: center;
+    border-radius: 28px;
+  }
+  .pillLink {
+    font-size: 0.875rem;
+    padding-inline: 12px;
+  }
+  .flip {
+    font-size: 1.125rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .morph {
+    filter: none !important;
+  }
+  .morphText {
+    opacity: 1;
+    filter: none;
+  }
+  .morphCall {
+    display: none;
+  }
+}
+.morphGroup {
+  display: block;
+  max-width: 100%;
+}
+.morph {
+  width: auto;
+  max-width: 100%;
+  text-align: center;
+}
+.morph > span {
+  min-width: 0;
+}
+.pillLink {
+  padding-inline: 20px;
+}
+@media (max-width: 640px) {
+  .pillBar {
+    gap: 0;
+  }
+  .pillItem {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  .pillLink {
+    padding-inline: 10px;
+  }
+}
+
+/* Preserve a legible silhouette throughout the sentence transition. */
+.morphGroup {
+  margin-block-start: 0.08em;
+}
+.morphText,
+.morphCall {
+  animation-timing-function: ease-in-out;
+}
+.pillLink {
+  padding: 10px 16px;
+  font-size: 0.9375rem;
+}
+.flip {
+  font-size: 1.25rem;
+  max-width: 36rem;
+}
+@media (max-width: 760px) {
+  .navigation {
+    width: auto;
+    max-width: 100%;
+    align-self: center;
+  }
+  .pillLink {
+    padding-inline: 12px;
+    font-size: 0.875rem;
+  }
+  .flip {
+    font-size: 1.125rem;
+  }
+}

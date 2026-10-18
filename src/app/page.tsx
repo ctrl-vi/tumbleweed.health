@@ -1,3 +1,4 @@
+import { MorphingText, Text3DFlip } from "@/components/motion";
 import { Action, TextAction, Conversation, s } from "@/components/site";
 import { examples } from "@/content/examples";
 export default function Home() {
@@ -6,13 +7,9 @@ export default function Home() {
       <section className={s.hero}>
         <h1>
           Find food nearby.
-          <br />
-          Start with a text.
+          <MorphingText />
         </h1>
-        <p className={s.intro}>
-          Find local food resources, ideas for meals, and help understanding
-          food programs. Ask in your own words.
-        </p>
+        <Text3DFlip />
         <div className={s.actions}>
           <TextAction />
           <Action href="/examples/food">See an example</Action>
